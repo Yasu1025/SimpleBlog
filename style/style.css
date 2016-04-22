@@ -1,0 +1,35 @@
+body{
+  font-size: 24px;
+}
+
+input[type=text]{
+    font-size: 18px;
+    height: 2.5em
+}
+
+.page_title{
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5em
+}
+
+.input-group{
+  margin-bottom: 0.5em;
+}
+
+.navbar-default .navbar-nav>li>a{
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s
+}
+.navbar-default .navbar-nav>li>a:hover{
+  background-color: #337AB7;
+  color: #fff!important;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s
+}
+
+.container-fluid{
+  width: 600px
+}
