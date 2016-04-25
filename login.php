@@ -1,7 +1,6 @@
 <?php
-
 require_once("config.php");
-
+require("classes/userClass.php");
 try {
   //var_dump(date( "Y-m-d H:i" ));
   $errName_msg = "";
@@ -25,8 +24,10 @@ if(isset($_POST["submit"]) === true){
 
   //get the value
   if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    $user = new User($uName,$uPass);
+    $user->login();
     session_regenerate_id(true);
-    $_SESSION['name'] = $uName;
+    $_SESSION['user'] = serialize($user);
     header("Location:index.php");
   }else{
     $errno_msg = "There is no such user....";

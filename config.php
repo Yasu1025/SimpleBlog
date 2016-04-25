@@ -2,6 +2,7 @@
 
 session_start();
 
+
 //  DB Infomation
 define("db_host", "localhost");
 define("db_name", "login_db");
@@ -17,6 +18,8 @@ date_default_timezone_set('Canada/Pacific');
 function h($t){
   return htmlspecialchars($t, ENT_QUOTES);
 }
+
+//$user = new User($pdo);
 
 
  ?>

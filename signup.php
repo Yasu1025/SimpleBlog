@@ -1,8 +1,6 @@
 <?php
 
-  require_once("config.php");
-
-
+require_once("config.php");
   try {
 
     $errName_msg = "";

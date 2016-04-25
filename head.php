@@ -1,3 +1,4 @@
+<?php require_once("config.php"); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,7 +18,7 @@
           <li><a href="index.php">Home</a></li>
           <li>
             <?php
-              if(!$_SESSION["name"]){
+              if(!$user){
                 echo "<a href='login.php'>Log in</a>";
               }else{
                 echo "<a href='logout.php'>Log out</a>";
@@ -25,6 +26,17 @@
             ?>
           </li>
           <li><a href="signup.php">signup</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="user_in_nav">
+          <?php
+            if(!$user){
+              echo "<a href='login.php'>Guest</a>";
+            }else{
+              echo "<a href='#'>$user->name</a>";
+            }
+            ?>
+          </li>
         </ul>
       </div>
     </nav>

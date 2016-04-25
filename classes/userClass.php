@@ -1,22 +1,30 @@
 <?php
 
-session_start();
+class User{
 
-//  DB Infomation
-define("db_host", "localhost");
-define("db_name", "login_db");
-define("db_user", "root"); // user@localhost
-define("db_pass", "root"); // login123
+  private $db;
+  public $name;
+  public $password;
 
-$pdo = new PDO("mysql:host=".db_host.";dbname=".db_name.";charset=utf8", db_user, db_pass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // to get error as an exception
-$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // to turn off emulation
+  function __construct($name,$pass){
 
-date_default_timezone_set('Canada/Pacific');
+    $this->name = $name;
+    $this->password = $pass;
+  }
 
-function h($t){
-  return htmlspecialchars($t, ENT_QUOTES);
+
+  public function logged_in(){
+    if(isset($_SESSION["loggedin"])){
+      return true;
+    }
+  }
+
+  public function login(){
+    $_SESSION["loggedin"] = true;
+    return true;
+  }
+
+
 }
-
 
  ?>
