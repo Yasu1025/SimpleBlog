@@ -1,9 +1,10 @@
 <?php
 
 require_once("config.php");
+$user =unserialize($_SESSION['user']);
 
-if(!isset($_SESSION["name"])){
-  header("Location:login.php");
+if(!$user->logged_in()){
+  header("Location:signup.php");
 }else{
   header("Location:login.php");
   $_SESSION["loggedin"] = false;

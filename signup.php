@@ -1,10 +1,12 @@
 <?php
 
 require_once("config.php");
+//$user =unserialize($_SESSION['user']);
+
   try {
 
     $errName_msg = "";
-    $errPass_msg ="";
+    $errPass_msg = "";
     $errSame_msg = "";
     $success_msg = "";
 
